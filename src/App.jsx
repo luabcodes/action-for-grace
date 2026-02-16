@@ -6,21 +6,34 @@ function App() {
 
   const content = {
     EN: {
-      title: "Empowering Children. Transforming Lives.",
-      text: `Action For Grace is a globally recognized foundation dedicated to delivering direct-impact programs that improve the lives of children of all ages in impoverished communities throughout Guatemala’s Dry Corridor. We work to reduce child hunger, malnutrition, and inequality, while providing education, mentorship, and holistic development programs that empower children to reach their full potential.
+      title: <>Empowering Children.<br />Transforming Lives.</>,
+      
+      text: `Action For Grace is a globally recognized humanitarian foundation dedicated to improving the lives of children of all ages in impoverished communities throughout Guatemala’s Dry Corridor. We are committed to eradicating hunger, malnutrition, and the effects of systemic poverty by addressing the root causes of inequality, climate vulnerability, and limited access to education and healthcare that disproportionately affect rural and Indigenous families.
 
-Our programs include school support, special events, nutritional guidance, and community mentorship, ensuring that every child receives the tools to grow, learn, and thrive with hope and dignity. By partnering with families, local communities, and global supporters, we aim to break the cycle of poverty, strengthen resilience to climate challenges, and provide sustainable opportunities for children to flourish.
+Our programs provide comprehensive and transformative support, including access to education, mentorship, psychosocial assistance, community initiatives, and skill development opportunities. We work closely with families, schools, and local organizations to create sustainable solutions that break the cycle of poverty.`,
 
-Supporting Action For Grace means joining a global network committed to changing lives, nurturing potential, and inspiring hope, one child at a time. Every contribution helps bring education, joy, and opportunity to those who need it most.`,
+      missionTitle: "Our Mission",
+
+      missionText: `Our mission is to ensure that children of all ages have access to essential resources and support systems to grow, learn, and flourish. Through programs focused on nutrition, education, healthcare, mentorship, and community engagement, we aim to build resilience and provide long-term sustainable opportunities.
+
+We strive to empower children and communities to overcome social, economic, and environmental challenges by building pathways toward self-sufficiency and sustainable development. By fostering holistic growth, promoting equality, and advocating for the rights of every child, Action For Grace serves as a bridge for global solidarity and transformative impact.`,
+
       cta: "Donate / Contact Us"
     },
+
     ES: {
-      title: "Empoderando Niños. Transformando Vidas.",
-      text: `Action For Grace es una fundación reconocida a nivel global dedicada a ofrecer programas de impacto directo que mejoran la vida de los niños de todas las edades en comunidades empobrecidas a lo largo del Corredor Seco de Guatemala. Trabajamos para reducir el hambre infantil, la desnutrición y la desigualdad, mientras proporcionamos educación, mentoría y programas de desarrollo integral que permiten a los niños alcanzar su máximo potencial.
+      title: <>Empoderando Niños.<br />Transformando Vidas.</>,
 
-Nuestros programas incluyen apoyo escolar, eventos especiales, orientación nutricional y mentoría comunitaria, asegurando que cada niño reciba las herramientas necesarias para crecer, aprender y prosperar con esperanza y dignidad. Al asociarnos con familias, comunidades locales y colaboradores globales, buscamos romper el ciclo de la pobreza, fortalecer la resiliencia ante desafíos climáticos y ofrecer oportunidades sostenibles para que los niños puedan desarrollarse plenamente.
+      text: `Action For Grace es una fundación humanitaria global dedicada a mejorar la vida de niños de todas las edades en comunidades empobrecidas del Corredor Seco de Guatemala. Nos comprometemos a erradicar el hambre, la desnutrición y los efectos de la pobreza sistémica, abordando las causas profundas de la desigualdad, la vulnerabilidad climática y el acceso limitado a la educación y la atención médica que afectan de manera desproporcionada a las familias rurales e indígenas.
 
-Apoyar a Action For Grace significa unirse a una red global comprometida con cambiar vidas, fomentar el potencial y brindar esperanza, un niño a la vez. Cada contribución ayuda a llevar educación, alegría y oportunidades a quienes más lo necesitan.`,
+Nuestros programas ofrecen apoyo integral y transformador, incluyendo acceso a educación, mentoría, apoyo psicosocial, iniciativas comunitarias y oportunidades de desarrollo de habilidades. Trabajamos estrechamente con familias, escuelas y organizaciones locales para crear soluciones sostenibles que rompan el ciclo de la pobreza.`,
+
+      missionTitle: "Nuestra misión",
+
+      missionText: `Nuestra misión es garantizar que los niños de todas las edades tengan acceso a los recursos y apoyos esenciales para crecer, aprender y prosperar. A través de programas centrados en nutrición, educación, salud, mentoría y participación comunitaria, buscamos fortalecer la resiliencia y brindar oportunidades sostenibles a largo plazo.
+
+Nos esforzamos por empoderar a los niños y a las comunidades para superar desafíos sociales, económicos y ambientales, construyendo caminos hacia la autosuficiencia y el desarrollo sostenible. Al fomentar un crecimiento integral, promover la igualdad y defender los derechos de cada niño, Action For Grace actúa como un puente para la solidaridad global y el impacto transformador.`,
+
       cta: "Donar / Contáctanos"
     }
   };
@@ -29,6 +42,7 @@ Apoyar a Action For Grace significa unirse a una red global comprometida con cam
 
   return (
     <div className="App">
+
       {/* NAVBAR */}
       <header className="navbar">
         <img src="/action.png" alt="Logo" className="logo" />
@@ -45,9 +59,26 @@ Apoyar a Action For Grace significa unirse a una red global comprometida con cam
 
       {/* TEXTO INSTITUCIONAL */}
       <section className="video-text">
+
+        {/* TITULO PRINCIPAL */}
         <h1>{content[lang].title}</h1>
+
+        {/* TEXTO INSTITUCIONAL */}
         <p>{content[lang].text}</p>
-        <a href="mailto:actionforgrace@gmail.com" className="btn-cta">{content[lang].cta}</a>
+
+        {/* SEGUNDO TITULO - MISSÃO */}
+        <h2 className="mission-title">
+          {content[lang].missionTitle}
+        </h2>
+
+        {/* TEXTO MISSÃO */}
+        <p>{content[lang].missionText}</p>
+
+        {/* BOTÃO */}
+        <a href="mailto:actionforgrace@gmail.com" className="btn-cta">
+          {content[lang].cta}
+        </a>
+
       </section>
 
       {/* IMAGEM KIDS */}
@@ -55,13 +86,13 @@ Apoyar a Action For Grace significa unirse a una red global comprometida con cam
         <img src="/kids.png" alt="Children" />
       </section>
 
-      {/* VIDEO 16:9 - AUTOPLAY, LOOP, MUTED */}
+      {/* VIDEO */}
       <section className="video-section">
-        <video 
-          controls 
-          loop 
-          autoPlay 
-          muted 
+        <video
+          controls
+          loop
+          autoPlay
+          muted
           className="hero-video"
         >
           <source src="/actionn.mp4" type="video/mp4" />
@@ -69,10 +100,13 @@ Apoyar a Action For Grace significa unirse a una red global comprometida con cam
         </video>
       </section>
 
-      {/* FOOTER MODERNO */}
+      {/* FOOTER */}
       <footer>
-        <p>© 2026 Action For Grace – Committed to a world where every child thrives with dignity and opportunity.</p>
+        <p>
+          © 2026 Action For Grace – Committed to a world where every child thrives with dignity and opportunity.
+        </p>
       </footer>
+
     </div>
   );
 }
